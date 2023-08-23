@@ -1,26 +1,42 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Consolas, Tahoma, Geneva, Verdana, sans-serif;
 }
 section#container {
-    width:500px;
-    border:1px solid #000;
-    margin:0 auto;
-    margin-top: 150px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 12px;
+    padding-bottom: 10px;
+    background: #fdfdfd;
+    box-shadow: 0px 0px 10px -1px #c9c9c9;
 }
 section#container header {
-    border-bottom: 1px solid #000;
-    padding:10px;
-    color: blue;
+    border-bottom: 1px dotted #2d2d2d;
+    padding: 10px;
+    color: #2d2d2d;
+    background: #f5f5f5;
+    border-radius: 12px 12px 0 0;
+    font-weight: 400;
 }
 section#messages {
-    margin: 5px 5px 15px 5px;
-    border: 1px solid #000;
-    padding: 95px 15px 10px 15px;
-    overflow: auto;
+    margin: 10px 10px 15px 10px;
+    padding: 10px 15px 10px 15px;
+    overflow-y: auto;
     max-height: 350px;
+    min-height: 350px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    /*
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+    */
 }
 section#messages div.message {
     margin: 0 0 15px 0;
+    width: 100%;
 }
 section#messages div.message h4.name {
     margin: 0 10px 0 0;
@@ -28,8 +44,11 @@ section#messages div.message h4.name {
 }
 section#messages div.message div.content {
     width: 75%;
-    border: 1px solid #000;
-    padding: 3px;
+    border: 1px solid #ababab;
+    padding: 5px;
+    background: #fdfdfd;
+    border-radius: 8px;
+    font-size: 12px;
 }
 section#messages div.message.from {
     text-align: right;
@@ -39,24 +58,31 @@ section#messages div.message.from {
 section#messages div.message.from div.content {
     text-align: left;
     display: inline-block;
+    background: #e7ffc8;
+    border-color: #addd6e;
 }
 section#form {
-    margin: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    margin: 10px;
 }
 section#form textarea {
     width: 80%;
-    border: 1px solid #000;
-    min-height: 15px;
-    max-height: 15px;
-    padding: 5px;
+    border: 1px solid #ababab;
+    min-height: 40px;
+    max-height: 100px;
+    min-width: 390px;
+    padding: 6px 4px;
+    background: #f5f5f5;
+    border-radius: 5px;
 }
 section#form button {
-    margin: 0;
-    padding: 6px;
-    border: 1px solid #000;
-    float: right;
-    width: 17%;
-    height: 27px;
-    color: green;
+margin: 0;
+    padding: 8px;
+    border: 1px solid #ababab;
+    width: 20%;
+    color: #2d2d2d;
     font-weight: bolder;
+    border-radius: 5px;
 }
