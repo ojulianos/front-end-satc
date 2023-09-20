@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento on-line</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+    <section id="container">
+        <header>Atendimento on-line</header>
+        
+        <section id="messages">
+            <div class="message to">
+                <h4 class="name">Atendente diz:</h4>
+                <div class="content">Blabla blabla blabla</div>
+            </div>
+            <div class="message to">
+                <h4 class="name">Atendente diz:</h4>
+                <div class="content">Blabla blabla blabla</div>
+            </div>
+
+            <div class="message from">
+                <h4 class="name">Você diz:</h4>
+                <div class="content">Blabla blabla blabla</div>
+            </div>
+            <div class="message from">
+                <h4 class="name">Você diz:</h4>
+                <div class="content">Blabla blabla blabla</div>
+            </div>
+        </section>
+
+        <form action="?enviar" id="formMessage">
+            <textarea name="" id="iTextMessage" cols="30" rows="1" placeholder="Digite sua mensagem..."></textarea>
+            <button type="submit">ENVIAR</button>
+        </form>
+    </section>
+
+    <script>
+        const messagesList = document.getElementById('messages');
+        const formMessage = document.getElementById('formMessage');
+        formMessage.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            let message = formMessage.querySelector('#iTextMessage');
+            if (message.value === "") {
+                alert('Preencha o texto da mensagem.');
+                return;
+            }
+
+            let newItem = document.createElement('div');
+            newItem.classList.add('message', 'from');
+            newItem.innerHTML = `<h4 class="name">Você diz:</h4><div class="content">${message.value}</div>`;
+            console.log(newItem)
+            messagesList.appendChild(newItem);
+        
+            formMessage.reset();
+            message.focus();
+      });
+    </script>
+</body>
+</html>
